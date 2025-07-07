@@ -12,7 +12,7 @@ db.once("open", () => console.log("System connected to MongoDb Database"));
 
 app.use(express.json());
 
-const cableRouter = require("./cable");
+const cableRouter = require("./routes/cableRoutes");
 
 app.use("/api", cableRouter);
 
