@@ -3,7 +3,9 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-mongoose.connect(`mongodb+srv://bjjacome1:pL38WUQFY70AOvZU@cable.simb9g0.mongodb.net/?retryWrites=true&w=majority&appName=Cable`, {useNewUrlParser: true});
+mongoose.connect(`mongodb+srv://bjjacome1:pL38WUQFY70AOvZU@cable.simb9g0.mongodb.net/?retryWrites=true&w=majority&appName=Cable`,
+    {useNewUrlParser: true,
+    useUnifiedTopology: true});
 
 const db = mongoose.connection;
 

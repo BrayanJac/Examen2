@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
 
-const cableShema = new mongoose.Schema(
+const cableSchema = new mongoose.Schema(
     {
-        id: {type: Number},
-        serialNumber: {type: String},
-        model: {type: String},
-        status: {type: String},
-        price: {type: Number},
-        width: {type: Number},
-
+        id: { type: Number, required: true, unique: true },
+        serialNumber: { type: String, required: true, unique: true },
+        model: { type: String, required: true },
+        status: { type: String, required: true },
+        price: { type: Number, required: true },
+        width: { type: Number, required: true }
     },
-    { collection: "Cable" }
+    {
+        collection: "Cable",
+        timestamps: true
+    }
 );
 
-module.exports = mongoose.model("Cable", cableShema);
+module.exports = mongoose.model("Cable", cableSchema);
