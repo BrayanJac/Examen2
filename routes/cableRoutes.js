@@ -4,10 +4,6 @@ const router = express.Router();
 
 router.post('/cable', async (req, res) => {
     try{
-        const Cable = await Cable.findOne({ id: req.params.id});
-        if (Cable == null) {
-            return res.status(404).json({ message: "Cable not found" });
-        }
         const {serialNumber, model, status, price, width} = req.body;
 
         if(!serialNumber, !model, !status, !price, !width){
